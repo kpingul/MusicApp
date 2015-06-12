@@ -1,9 +1,29 @@
 /* Backend */
 var express 	= require('express'),
+	mongoose 	= require('mongoose'),
 	app 		= express(),
 	port 		= 3000;
 
-/* config */
+
+/* MongoDB config */
+
+mongoose.connect('mongodb://localhost/musicplaylist');
+
+var Schema = {
+
+	artist: String,
+	title: String,
+	rate: Number
+}
+
+var Song = mongoose.model('song', Schema);
+
+
+
+
+
+
+/* Route config */
 
 
 app.get('/', function( req, res ) {
@@ -11,6 +31,10 @@ app.get('/', function( req, res ) {
 	res.sendFile(__dirname + '/index.html');
 
 });
+
+/* RESTful API  config*/
+
+
 
 
 
