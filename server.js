@@ -19,18 +19,13 @@ var Schema = {
 var Song = mongoose.model('song', Schema);
 
 
-
-
-
-
 /* Route config */
 
+//index page
+app.use(express.static(__dirname + '/'));
+//stylesheet
 
-app.get('/', function( req, res ) {
-
-	res.sendFile(__dirname + '/index.html');
-
-});
+app.use(express.static(__dirname + '/client/css'));
 
 /* RESTful API  config*/
 
