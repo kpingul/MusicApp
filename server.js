@@ -5,7 +5,9 @@ var express 	= require('express'),
 	port 		= 3000;
 
 
-/* MongoDB config */
+/*_______________________________________________*/
+/*                 MongoDB config                */
+/*_______________________________________________*/
 
 mongoose.connect('mongodb://localhost/musicplaylist');
 
@@ -18,16 +20,23 @@ var Schema = {
 
 var Song = mongoose.model('song', Schema);
 
-
-/* Route config */
-
-//index page
+/*_______________________________________________*/
+/*                 Route config                  */
+/*_______________________________________________*/
+	//index page
 app.use(express.static(__dirname + '/'));
-//stylesheet
 
+	//stylesheet
 app.use(express.static(__dirname + '/client/css'));
 
-/* RESTful API  config*/
+	//javascripts
+
+app.use(express.static(__dirname + 'client/js/'));
+
+
+/*_______________________________________________*/
+/*                 RESTFUL API config            */
+/*_______________________________________________*/
 
 
 
@@ -35,9 +44,9 @@ app.use(express.static(__dirname + '/client/css'));
 
 
 
-
-
-/* Server Config */
+/*_______________________________________________*/
+/*                 Server config                 */
+/*_______________________________________________*/
 app.listen(port, function() {
 	console.log('Server running on port ' + port);
 });
