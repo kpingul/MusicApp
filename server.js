@@ -15,23 +15,23 @@ var Schema = {
 
 	artist: String,
 	title: String,
-	rate: Number
+	rating: Number
 }
 
 var Song = mongoose.model('song', Schema);
 
+
+
 /*_______________________________________________*/
 /*                 Route config                  */
 /*_______________________________________________*/
-	//index page
+
+
+//index page
 app.use(express.static(__dirname + '/'));
 
-	//stylesheet
-app.use(express.static(__dirname + '/client/css'));
 
-	//javascripts
 
-app.use(express.static(__dirname + 'client/'));
 
 
 /*_______________________________________________*/
@@ -39,7 +39,14 @@ app.use(express.static(__dirname + 'client/'));
 /*_______________________________________________*/
 
 
+// app.get('/api/playlist', function(req, res){
 
+// 	Song.find( function( err, doc ){
+// 		res.send(doc);
+// 		console.log(doc);
+// 	});
+
+// });
 
 
 
