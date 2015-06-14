@@ -7,13 +7,16 @@
 				<tbody>
 
 					<!-- insert music data from server into here as a TR and TD -->
-					<tr ng-click="editSong()">
+					<tr ng-repeat="songs in data" ui-sref="edit({id: songs.id, artist: songs.artist, title: songs.title, rating: songs.rating})">
 						
-						<td>Jay-z</td>
-						<td>December 4th</td>
-						<td>4</td>
+						<td>{{songs.artist}}</td>
+						<td>{{songs.title}}</td>
+						<td>{{songs.rating}}</td>
+
 					</tr>
+
 				</tbody>
+
 
 </table>
 

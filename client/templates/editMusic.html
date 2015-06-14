@@ -1,16 +1,16 @@
-	<form class="form-horizontal" role="form" ng-submit="addSong()">
+	<form class="form-horizontal" role="form">
 
 		  <div class="form-group">
 		    <label class="control-label col-sm-2" for="artist">Artist</label>
 		    <div class="col-sm-10">
-		      <input type="text" class="form-control" placeholder="Enter artist name...">
+		      <input type="text" class="form-control" ng-model="artist" placeholder="Enter artist name...">
 		    </div>
 		  </div>
 
 		  <div class="form-group">
 		    <label class="control-label col-sm-2" for="songtitle">Song</label>
 		    <div class="col-sm-10"> 
-		      <input type="text" class="form-control" placeholder="Enter Song title...">
+		      <input type="text" class="form-control" ng-model="song" placeholder="Enter Song title...">
 		    </div>
 		  </div>
 
@@ -19,7 +19,7 @@
 		  
 			  <label for="musicrating" class=" control-label col-sm-2">Rating</label>
 			  <div class="col-sm-10"> 
-				  <select class="form-control" >
+				  <select ng-model="rating" class="form-control" >
 				    <option>1</option>
 				    <option>2</option>
 				    <option>3</option>
@@ -31,7 +31,7 @@
 	
 		  <div class="form-group"> 
 		    <div class="col-sm-offset-2 col-sm-10">
-		      <button type="submit" class="btn btn-default" ng-click="addSong">Add</button>
+		      <button type="submit" class="btn btn-success" >Update</button>
 		    </div>
 		  </div>
 
