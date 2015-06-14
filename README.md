@@ -1,4 +1,4 @@
-# musicapp
+# Music Application
 
 Simple music application that allows users to add, update, and delete songs to their playlist
 
