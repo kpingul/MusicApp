@@ -31,7 +31,7 @@ app.use(express.static(__dirname + '/client/css'));
 
 	//javascripts
 
-app.use(express.static(__dirname + 'client/js/'));
+app.use(express.static(__dirname + 'client/'));
 
 
 /*_______________________________________________*/
