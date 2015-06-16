@@ -14,9 +14,13 @@
 
 					<!-- insert music data from server into here as a TR and TD -->
 
-					<!-- ui sref allows me to insert the specific song that was clicked AND dynamically communicate it THROUGH the URL dynamically -->
-					
-					<tr ng-repeat="songs in data" ui-sref="edit({id: songs.id, artist: songs.artist, title: songs.title, rating: songs.rating})">
+					<!-- ui sref allows me to insert the specific song that was clicked AND dynamically communicate it THROUGH the URL dynamically
+						
+						Each song that is clicked gets sent to the edit controller
+			
+					 -->
+						
+					<tr ng-repeat="songs in data" ui-sref="edit({id: songs._id, artist: songs.artist, title: songs.title, rating: songs.rating})">
 						
 						<td>{{songs.artist}}</td>
 
@@ -31,5 +35,5 @@
 
 </table>
 
-<a ui-sref="add" class="btn btn-primary">Add</a>
+<a ui-sref="add" class="btn btn-primary">Add new song to playlist</a>
 	

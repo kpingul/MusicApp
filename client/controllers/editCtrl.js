@@ -7,12 +7,32 @@
 
 	angular.module('APP')
 
-		.controller('editCtrl' , ['$scope', '$stateParams', function($scope, $stateParams){
+		.controller('editCtrl' , ['$scope', '$stateParams', 'dataService', function($scope, $stateParams, dataService){
+			
+			$scope.id = $stateParams.id;
+			$scope.artist = $stateParams.artist;
+			$scope.song = $stateParams.title;
+			$scope.rating = $stateParams.rating;
+			
+			$scope.deleteSong = function(){
+				dataService.delete($scope.id)
+					
+					.success( function(data){
+						console.log(data);
+					})
 
-					$scope.artist = $stateParams.artist;
-					$scope.song = $stateParams.title;
-					$scope.rating = $stateParams.rating;
-					console.log($scope.rating);
+					.error( function(error){
+						console.log(error);
+					});
+				$scope.artist = '';
+				$scope.song = '';
+				$scope.rating = '';
+
+			}	
+
+
+					
+
 
 		}]);
 
