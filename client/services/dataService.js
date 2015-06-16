@@ -26,8 +26,8 @@
 				return $http.delete('/api/playlist/' + id);
 			}
 
-			service.update = function(id){
-				return http.put('api/playlist/' + id);
+			service.update = function(id, updatedSong){
+				return $http.put('api/playlist/' + id, updatedSong);
 			}
 
 			return service;

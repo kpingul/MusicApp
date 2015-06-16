@@ -45,9 +45,9 @@ app.use(express.static(__dirname + '/'));
 //GET 
 app.get('/api/playlist', function(req, res){
 
-	Song.find( function( err, doc ){
-		res.send(doc);
-		console.log(doc);
+	Song.find( function( err, song ){
+		res.send(song);
+		console.log(song);
 	});
 
 });
@@ -81,9 +81,9 @@ app.delete('/api/playlist/:id', function( req, res ){
 		
 			console.log(error);
 	
-		Song.find('/api/playlist', function(err, doc) {
+		Song.find('/api/playlist', function(err, song) {
 		
-			res.send(doc);
+			res.send(song);
 		
 		});
 
@@ -93,6 +93,26 @@ app.delete('/api/playlist/:id', function( req, res ){
 
 
 //PUT
+
+
+app.put('/api/playlist/:id', function( req, res ){
+
+	var id = req.params.id;
+	var artist = req.body.artist;
+	var title = req.body.title;
+	var rating = req.body.rating;
+
+	Song.update( {_id: id}, {artist: artist, title: title, rating: rating}, function(error, doc){
+
+		if(error) 
+			console.log(error);
+		res.send(doc);
+
+
+	});
+
+
+});
 
 
 
