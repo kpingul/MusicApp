@@ -20,7 +20,7 @@
 			
 					 -->
 						
-					<tr ng-repeat="songs in data" ui-sref="edit({id: songs._id, artist: songs.artist, title: songs.title, rating: songs.rating})">
+					<tr ng-repeat="songs in vm.data" ui-sref="edit({id: songs._id, artist: songs.artist, title: songs.title, rating: songs.rating})">
 						
 						<td>{{songs.artist}}</td>
 

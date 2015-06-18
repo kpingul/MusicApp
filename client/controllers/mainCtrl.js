@@ -8,20 +8,25 @@
     
 		angular.module('APP')
 
-		.controller('mainCtrl' , ['$scope', 'dataService', function($scope,dataService){
+		.controller('MainCtrl' , mainCtrl);
 
+		mainCtrl.$inject = ['$scope', 'dataService'];
+
+		function mainCtrl($scope,dataService) {
+
+			var vm = this;
+			console.log(vm);
 			//using the data service to return a promise from the server
 			dataService.get()
-				.success(function(data) {
-					//updates the template using two way binding with $scope 
-					$scope.data = data;
-					console.log(data);
-				})
-				.error(function(error){
+				.success(function (data) {
+					vm.data = data;
+				})	
+				.error(function (error)	{			
 					console.log(error);
 				});
+				
 
 			
-		}]);
+		}
 })();
 

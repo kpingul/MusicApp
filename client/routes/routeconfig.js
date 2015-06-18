@@ -19,7 +19,9 @@
 
 							templateUrl: 'client/templates/home.html',
 
-							controller: 'mainCtrl'
+							controller: 'MainCtrl',
+
+							controllerAs: 'vm'
 
 						})
 
@@ -29,7 +31,9 @@
 
 							templateUrl: 'client/templates/addMusic.html',
 
-							controller: 'addCtrl'
+							controller: 'addCtrl',
+
+							controllerAs: 'vm'
 
 						})
 
@@ -40,7 +44,9 @@
 
 							templateUrl: 'client/templates/editMusic.html',
 
-							controller: 'editCtrl'
+							controller: 'editCtrl',
+
+							controllerAs: 'vm'
 						});
 					
 

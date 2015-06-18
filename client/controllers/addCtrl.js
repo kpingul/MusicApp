@@ -7,36 +7,35 @@
 
 	angular.module('APP')
 
-		.controller('addCtrl' , ['$scope', 'dataService', function($scope, dataService){
+		.controller('addCtrl' , addCtrl);
 
-			$scope.artistName = '';
-			$scope.songTitle = '';
-			$scope.rating = '';
+		addCtrl.$inject = ['$scope', 'dataService'];
 
-			$scope.addSong = function(){
+		function addCtrl($scope, dataService){
+			var vm = this;
+
+			vm.artistName = '';
+			vm.songTitle = '';
+			vm.rating = '';
+
+			vm.addSong = function(){
 
 				var newsong = {
-					artist: $scope.artistName,
-					title: $scope.songTitle,
-					rating: $scope.rating
+					artist: vm.artistName,
+					title: vm.songTitle,
+					rating: vm.rating
 				}
 
-					dataService.post(newsong)
-					.success(function(data){
-						console.log(data);
-					})
-					.error(function(error){
-						console.log(error);
-					});
+				dataService.post(newsong);
 
 				//empty out input values	
-				$scope.artistName = '';
-				$scope.songTitle = '';
-				$scope.rating = '';
+				vm.artistName = '';
+				vm.songTitle = '';
+				vm.rating = '';
 			}
 
 	
-		}]);		
+		}		
 
 		
 })();

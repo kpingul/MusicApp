@@ -7,39 +7,32 @@
 
 	angular.module('APP')
 
-		.controller('editCtrl' , ['$scope', '$stateParams', 'dataService', function($scope, $stateParams, dataService){
-			
+		.controller('editCtrl', editCtrl);
+		
+		editCtrl.$inject = ['$scope', '$stateParams', 'dataService'];
+
+		function editCtrl($scope, $stateParams, dataService) {
+
+			var vm = this;
 			//updates the edit Music template with the current values that was previously clicked on
 			//in the home template using state params to receive the data
-			$scope.id = $stateParams.id;
-			$scope.artist = $stateParams.artist;
-			$scope.song = $stateParams.title;
-			$scope.rating = $stateParams.rating;
+			vm.id = $stateParams.id;
+			vm.artist = $stateParams.artist;
+			vm.song = $stateParams.title;
+			vm.rating = $stateParams.rating;
 			
-			$scope.deleteSong = function(){
+			vm.deleteSong = function(){
 
-				dataService.delete($scope.id)
-					
-					.success( function(data){
-
-						console.log(data);
-
-					})
-
-					.error( function(error){
-
-						console.log(error);
-
-					});
+				dataService.delete(vm.id);
 
 
-				$scope.artist = '';
-				$scope.song = '';
-				$scope.rating = '';
+				vm.artist = '';
+				vm.song = '';
+				vm.rating = '';
 
 			}	
 
-			$scope.updateSong = function(artist, title, rating){
+			vm.updateSong = function(artist, title, rating){
 
 				var updatedSong = {
 
@@ -52,26 +45,14 @@
 				}
 
 
-				dataService.update($scope.id, updatedSong)
-
-					.success(function(data) {
-
-						console.log(data);	
-
-					})
-
-					.error(function(error) {
-
-						console.log(error);
-
-					});
+				dataService.update(vm.id, updatedSong);
 			}
 
 
 					
 
 
-		}]);
+		}
 
 
 })();
