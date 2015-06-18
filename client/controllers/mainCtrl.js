@@ -15,7 +15,6 @@
 		function mainCtrl($scope,dataService) {
 
 			var vm = this;
-			console.log(vm);
 			//using the data service to return a promise from the server
 			dataService.get()
 				.success(function (data) {

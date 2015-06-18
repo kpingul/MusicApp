@@ -44,7 +44,7 @@
 
 				}
 
-
+				console.log(updatedSong);
 				dataService.update(vm.id, updatedSong);
 			}
 
