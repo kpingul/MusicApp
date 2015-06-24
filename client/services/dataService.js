@@ -13,15 +13,28 @@
 
 		function dataService($http){
 			
-			var service = {};
+			//refactor to create service object on the top
+			//using function declarations hoisting
 
-			service.get = function(){
+
+			var service = {
+
+				getData: getData,
+
+				postData: postData,
+
+				deleteData: deleteData,
+
+				updateData: updateData
+			};
+
+			function getData(){
 
 				return $http.get('/api/playlist');
 
 			}
 
-			service.post = function(song){
+			function postData(song){
 
 				return $http.post('/api/playlist', song)
 								.success(function (data) {
@@ -32,7 +45,7 @@
 								});
 			}
 
-			service.delete = function(id){
+			function deleteData(id){
 
 				return $http.delete('/api/playlist/' + id)
 								.success(function (data) {
@@ -43,7 +56,7 @@
 								});
 			}
 
-			service.update = function(id, updatedSong){
+			function updateData(id, updatedSong){
 				return $http.put('api/playlist/' + id, updatedSong)
 								.success(function (data) {
 									return data;

@@ -1,36 +1,36 @@
 <table class="table table-hover">
 
-				<thead>
+	<thead>
 
-					<th>Artist</th>
+		<th>Artist</th>
 
-					<th>Song</th>
+		<th>Song</th>
 
-					<th>Rate</th>
+		<th>Rate</th>
 
-				</thead>
+	</thead>
 
-				<tbody>
+	<tbody>
 
-					<!-- insert music data from server into here as a TR and TD -->
+		<!-- insert music data from server into here as a TR and TD -->
 
-					<!-- ui sref allows me to insert the specific song that was clicked AND dynamically communicate it THROUGH the URL dynamically
-						
-						Each song that is clicked gets sent to the edit controller
+		<!-- ui sref allows me to insert the specific song that was clicked AND dynamically communicate it THROUGH the URL dynamically
 			
-					 -->
-						
-					<tr ng-repeat="songs in vm.data" ui-sref="edit({id: songs._id, artist: songs.artist, title: songs.title, rating: songs.rating})">
-						
-						<td>{{songs.artist}}</td>
+			Each song that is clicked gets sent to the edit controller
 
-						<td>{{songs.title}}</td>
+		 -->
+			
+		<tr ng-repeat="songs in vm.data" ui-sref="edit({id: songs._id, artist: songs.artist, title: songs.title, rating: songs.rating})">
+			
+			<td>{{songs.artist}}</td>
 
-						<td>{{songs.rating}}</td>
+			<td>{{songs.title}}</td>
 
-					</tr>
+			<td>{{songs.rating}}</td>
 
-				</tbody>
+		</tr>
+
+	</tbody>
 
 
 </table>

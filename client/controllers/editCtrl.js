@@ -14,6 +14,8 @@
 		function editCtrl($scope, $stateParams, dataService) {
 
 			var vm = this;
+
+			
 			//updates the edit Music template with the current values that was previously clicked on
 			//in the home template using state params to receive the data
 			vm.id = $stateParams.id;
@@ -21,9 +23,9 @@
 			vm.song = $stateParams.title;
 			vm.rating = $stateParams.rating;
 			
-			vm.deleteSong = function(){
+			vm.deleteSong = function() {
 
-				dataService.delete(vm.id);
+				dataService.deleteData(vm.id);
 
 
 				vm.artist = '';
@@ -44,8 +46,8 @@
 
 				}
 
-				console.log(updatedSong);
-				dataService.update(vm.id, updatedSong);
+
+				dataService.updateData(vm.id, updatedSong);
 			}
 
 

@@ -1,63 +1,64 @@
-	<form class="form-horizontal" role="form">
+<form class="form-horizontal" role="form">
 
-		  <div class="form-group">
+	<div class="form-group">
 
-			    <label class="control-label col-sm-2" for="artist">Artist</label>
+		   <label class="control-label col-sm-2" for="artist">Artist</label>
 
-				    <div class="col-sm-10">
+		    <div class="col-sm-10">
 
-				     	 <input type="text" class="form-control" ng-model="vm.artist" placeholder="Enter artist name...">
+		     	 <input type="text" class="form-control" ng-model="vm.artist" placeholder="Enter artist name...">
 
-				    </div>
+		    </div>
 
-		  </div>
+	 </div>
 
-		  <div class="form-group">
+	 <div class="form-group">
 
-		    <label class="control-label col-sm-2" for="songtitle">Song</label>
+	    <label class="control-label col-sm-2" for="songtitle">Song</label>
 
-			    <div class="col-sm-10"> 
+	    <div class="col-sm-10"> 
 
-			      	<input type="text" class="form-control" ng-model="vm.song" placeholder="Enter Song title...">
+	      	<input type="text" class="form-control" ng-model="vm.song" placeholder="Enter Song title...">
 
-			    </div>
+	    </div>
 
-		  </div>
+	 </div>
 
- 
-		  <div class="form-group">
-		  
-			  <label for="musicrating" class=" control-label col-sm-2">Rating</label>
 
-				  <div class="col-sm-10"> 
+    <div class="form-group">
+	  
+	    <label for="musicrating" class=" control-label col-sm-2">Rating</label>
 
-					  <select ng-model="vm.rating" class="form-control" >
+		  <div class="col-sm-10"> 
 
-						    <option>1</option>
+			  <select ng-model="vm.rating" class="form-control" >
 
-						    <option>2</option>
+			    <option>1</option>
 
-						    <option>3</option>
+			    <option>2</option>
 
-						    <option>4</option>
+			    <option>3</option>
 
-						    <option>5</option>
+			    <option>4</option>
 
-					  </select>
+			    <option>5</option>
 
-				 </div>
+			  </select>
 
-		</div>
-	
-		  <div class="form-group"> 
+		 </div>
 
-			    <div class="col-sm-offset-2 col-sm-10">
-				
-			     	 <button type="submit" class="btn btn-success" ng-click="vm.updateSong(vm.artist, vm.song, vm.rating)">Update</button>
-			     	 <button type="submit" class="btn btn-danger" ng-click="vm.deleteSong()" >Delete</button>
+	</div>
 
-			    </div>
+	  <div class="form-group"> 
 
-		  </div>
+		    <div class="col-sm-offset-2 col-sm-10">
+			
+		     	 <button type="submit" class="btn btn-success" ng-click="vm.updateSong(vm.artist, vm.song, vm.rating)">Update</button>
+		     	 
+		     	 <button type="submit" class="btn btn-danger" ng-click="vm.deleteSong()" >Delete</button>
+
+		    </div>
+
+	  </div>
 
 </form>

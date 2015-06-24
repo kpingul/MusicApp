@@ -26,7 +26,7 @@
 					rating: vm.rating
 				}
 
-				dataService.post(newsong);
+				dataService.postData(newsong);
 
 				//empty out input values	
 				vm.artistName = '';
