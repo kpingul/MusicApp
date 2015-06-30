@@ -12,6 +12,7 @@
 		addCtrl.$inject = ['$scope', 'dataService'];
 
 		function addCtrl($scope, dataService){
+
 			var vm = this;
 
 			vm.artistName = '';
@@ -21,12 +22,16 @@
 			vm.addSong = function(){
 
 				var newsong = {
+
 					artist: vm.artistName,
+
 					title: vm.songTitle,
+
 					rating: vm.rating
 				}
 
-				dataService.post(newsong);
+				//call data service to post new song to DB
+				dataService.addSong(newsong);
 
 				//empty out input values	
 				vm.artistName = '';

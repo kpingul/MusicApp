@@ -23,7 +23,8 @@
 			
 			vm.deleteSong = function(){
 
-				dataService.delete(vm.id);
+				//call dataservice to delete the current song selected from DB
+				dataService.deleteSong(vm.id);
 
 
 				vm.artist = '';
@@ -45,7 +46,13 @@
 				}
 
 				console.log(updatedSong);
-				dataService.update(vm.id, updatedSong);
+
+				//call dataservice to update current song in DB
+				dataService.updateSong(vm.id, updatedSong);
+
+				vm.artist = '';
+				vm.song = '';
+				vm.rating = '';
 			}
 
 

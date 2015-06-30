@@ -15,8 +15,9 @@
 		function mainCtrl($scope,dataService) {
 
 			var vm = this;
+			
 			//using the data service to return a promise from the server
-			dataService.get()
+			dataService.getAllSongs()
 				.success(function (data) {
 					vm.data = data;
 				})	

@@ -9,19 +9,29 @@
 
 		.factory('dataService', dataService);
 
-		dataService.$inect = ['$http'];
+		dataService.$inject = ['$http'];
 
 		function dataService($http){
 			
-			var service = {};
+			var service = {
 
-			service.get = function(){
+				getAllSongs: getAllSongs,
+
+				addSong: addSong,
+
+				deleteSong: deleteSong,
+
+				updateSong: updateSong
+
+			};
+
+			function getAllSongs (){
 
 				return $http.get('/api/playlist');
 
 			}
 
-			service.post = function(song){
+			function addSong (song){
 
 				return $http.post('/api/playlist', song)
 								.success(function (data) {
@@ -32,7 +42,7 @@
 								});
 			}
 
-			service.delete = function(id){
+			function deleteSong(id){
 
 				return $http.delete('/api/playlist/' + id)
 								.success(function (data) {
@@ -43,7 +53,7 @@
 								});
 			}
 
-			service.update = function(id, updatedSong){
+			function updateSong(id, updatedSong){
 				return $http.put('api/playlist/' + id, updatedSong)
 								.success(function (data) {
 									return data;
